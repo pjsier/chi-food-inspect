@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name":    "CHIfood",
+    "version": "0.0",
+    "offline_enabled": true,
+
+    "content_scripts": [{
+        "matches":    ["http://www.yelp.com/biz/*", "https://www.yelp.com/biz/*"],
+        "css":        ["block.css"],
+        "js":         ["content.js"]
+    }],
+
+    "permissions": [
+      "http://data.cityofchicago.org/resource/*",
+      "http://www.yelp.com/biz/*"
+    ]
+}
