@@ -6,12 +6,12 @@ function requestData() {
 
   // Prepare the data to be POSTed by URLEncoding each field's contents
   var resName = document.querySelector('.biz-page-title').innerText;
+  resName = "'" + resName + "'";
   var resAddr = document.querySelector('.street-address').querySelector('span').innerText;
-
-  //encodeURIComponent
+  resAddr = "'" + resAddr + "'";
 
   var params = 'aka_name like ' + resName +
-               'AND address like ' + resAddr + ' ';
+               ' AND address like ' + resAddr + ' ';
 
   var queryString = encodeURIComponent(url+params);
 
