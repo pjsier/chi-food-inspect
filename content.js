@@ -5,17 +5,17 @@ function requestData() {
   var xhr = new XMLHttpRequest();
 
   // Prepare the data to be POSTed by URLEncoding each field's contents
-  var resName = document.querySelector('.biz-page-title').innerText;
+  var resName = document.querySelector('.biz-page-title').innerText.toUpperCase();
   resName = "'" + resName + "'";
-  var resAddr = document.querySelector('.street-address').querySelector('span').innerText;
-  resAddr = "'" + resAddr + "'";
+  var resAddr = document.querySelector('.street-address').querySelector('span').innerText.toUpperCase();
+  resAddr = "'" + resAddr + " '";
 
   var params = 'aka_name like ' + resName +
-               ' AND address like ' + resAddr + ' ';
+               ' AND address like ' + resAddr;
 
-  var queryString = encodeURIComponent(url+params);
+  var queryString = url + encodeURIComponent(params);
 
-  console.log(url+params);
+  console.log(queryString);
 
   xhr.open('GET', url+params, true);
 
